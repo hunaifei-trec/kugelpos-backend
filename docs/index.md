@@ -1,3 +1,5 @@
+---
+---
 # Kugelpos Backend Documentation
 
 Welcome to the **Kugelpos POS Backend** documentation site.
