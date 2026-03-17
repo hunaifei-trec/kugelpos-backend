@@ -1,27 +1,22 @@
----
-layout: home
-title: Kugelpos Backend Documentation
----
-
 # Kugelpos Backend Documentation
 
-Welcome to the Kugelpos POS backend system documentation.
+Welcome to the **Kugelpos POS Backend** documentation site.
 
-## 📚 Documentation Languages
+## 📚 Choose Language / 言語を選択
 
-- [**English Documentation**](en/README.md)
-- [**日本語ドキュメント**](ja/README.md)
+| Language | Link |
+|----------|------|
+| 🇬🇧 English | [View English Docs](en/README.md) |
+| 🇯🇵 日本語 | [日本語ドキュメントを見る](ja/README.md) |
 
-## 🔗 Quick Links
+## 🏗️ Services Overview
 
-### English
-
-- [Architecture Specification](en/general/architecture.md)
-- [Design Patterns](en/general/design-patterns.md)
-- [Error Code Specification](en/general/error_code_spec.md)
-- [API Specifications](en/account/api-specification.md)
-
-### 日本語
-
-- [アーキテクチャ仕様](ja/general/architecture.md)
-- [設計パターン](ja/general/design-patterns.md)
+| Service | Port | Description |
+|---------|------|-------------|
+| **Account** | 8001 | User authentication & JWT token management |
+| **Cart** | 8003 | Shopping cart & transaction processing |
+| **Journal** | 8004 | Electronic journal management |
+| **Master Data** | 8005 | Products, stores, payment methods |
+| **Report** | 8006 | Report generation |
+| **Stock** | 8007 | Inventory management |
+| **Terminal** | 8008 | Terminal management & API key auth |

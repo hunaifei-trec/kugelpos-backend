@@ -51,3 +51,6 @@ claude-*
 # ignore git worktree directories
 worktree/
 worktrees/
+
+# MkDocs build output
+site/
