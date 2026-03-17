@@ -1,0 +1,149 @@
+title: "Kugelpos Backend Documentation"
+description: "API and architecture documentation for the Kugelpos POS backend system"
+
+baseurl: "/kugelpos-backend"
+url: "https://hunaifei-trec.github.io"
+
+# just-the-docs: modern documentation theme with sidebar navigation
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+color_scheme: dark
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+
+# Top-right auxiliary links
+aux_links:
+  "GitHub ↗":
+    - "https://github.com/hunaifei-trec/kugelpos-backend"
+aux_links_new_tab: true
+
+# Footer
+footer_content: "Kugelpos Backend Documentation"
+
+# ---------------------------------------------------------------
+# KEY: Use Jekyll `defaults` to set layout/parent for all pages
+# WITHOUT modifying any individual .md files
+# ---------------------------------------------------------------
+defaults:
+  # 1. Apply just-the-docs layout to ALL pages globally
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+  # 2. Home page
+  - scope:
+      path: "index.md"
+    values:
+      title: "Home"
+      nav_order: 1
+
+  # 3. English section root (this becomes the parent nav item)
+  - scope:
+      path: "en/README.md"
+    values:
+      title: "English"
+      nav_order: 2
+      has_children: true
+
+  # 4. All EN sub-pages → children of "English"
+  - scope:
+      path: "en/general"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/commons"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/account"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/cart"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/journal"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/master-data"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/report"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/stock"
+    values:
+      parent: "English"
+  - scope:
+      path: "en/terminal"
+    values:
+      parent: "English"
+
+  # 5. Japanese section root
+  - scope:
+      path: "ja/README.md"
+    values:
+      title: "日本語"
+      nav_order: 3
+      has_children: true
+
+  # 6. All JA sub-pages → children of "日本語"
+  - scope:
+      path: "ja/general"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/commons"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/account"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/cart"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/journal"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/master-data"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/report"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/stock"
+    values:
+      parent: "日本語"
+  - scope:
+      path: "ja/terminal"
+    values:
+      parent: "日本語"
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Plugins required for remote theme
+plugins:
+  - jekyll-remote-theme
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

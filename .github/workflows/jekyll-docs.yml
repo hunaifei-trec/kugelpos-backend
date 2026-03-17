@@ -1,0 +1,65 @@
+name: Deploy Jekyll (just-the-docs) to GitHub Pages
+
+on:
+  push:
+    branches:
+      - jekyll-docs
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: false
+
+      - name: Install Jekyll and just-the-docs dependencies
+        run: |
+          gem install bundler
+          cd docs
+          bundle init
+          bundle add jekyll jekyll-remote-theme
+          bundle install
+        env:
+          BUNDLE_PATH: vendor/bundle
+
+      - name: Build Jekyll site
+        run: |
+          cd docs
+          bundle exec jekyll build --destination ../site --baseurl "/kugelpos-backend"
+        env:
+          JEKYLL_ENV: production
+          BUNDLE_PATH: vendor/bundle
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
