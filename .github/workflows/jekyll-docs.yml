@@ -35,7 +35,7 @@ jobs:
           gem install bundler
           cd docs
           bundle init
-          bundle add jekyll jekyll-remote-theme
+          bundle add jekyll jekyll-remote-theme jekyll-seo-tag jekyll-sitemap
           bundle install
         env:
           BUNDLE_PATH: vendor/bundle
