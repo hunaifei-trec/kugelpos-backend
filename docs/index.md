@@ -20,3 +20,4 @@ Welcome to the **Kugelpos POS Backend** documentation site.
 | **Report** | 8006 | Report generation |
 | **Stock** | 8007 | Inventory management |
 | **Terminal** | 8008 | Terminal management & API key auth |
+
