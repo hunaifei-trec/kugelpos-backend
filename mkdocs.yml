@@ -89,6 +89,8 @@ nav:
       - HTTP Communication: en/general/http_communication.md
       - Dapr Components: en/general/dapr_components.md
       - MkDocs vs Jekyll: en/general/mkdocs-vs-jekyll.md
+      - GitHub Pages Deployment: en/general/github-pages-deployment.md
+
     - Common Functions: en/commons/common-function-spec.md
     - Account Service:
       - API Specification: en/account/api-specification.md
